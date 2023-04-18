@@ -3,7 +3,6 @@ import "./Single.css";
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import CircleGrid from '../../../components/Loaders/CircleGrid';
-import { BASE_URL } from '../../../App';
 
 const Single = () => {
   const navigate = useNavigate()
@@ -16,7 +15,7 @@ const Single = () => {
   const [showError, setShowError] = useState(false);
 
   const getPostDetails = () => {
-    axios.get(`${BASE_URL}/post/${params.id}`)
+    axios.get(`${process.env.REACT_APP_BASE_URL}/post/${params.id}`)
       .then((result) => {
         if (userID === result.data.authorID) {
           setPostDetails(result.data)
@@ -32,7 +31,7 @@ const Single = () => {
   }
 
   const deleteHandler = () => {
-    axios.delete(`${BASE_URL}/post/${params.id}`)
+    axios.delete(`${process.env.REACT_APP_BASE_URL}/post/${params.id}`)
       .then(() => {
         navigate("/")
       })

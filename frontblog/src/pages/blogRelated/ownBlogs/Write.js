@@ -3,7 +3,6 @@ import "./Write.css"
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Popup from '../../../components/Popup'
-import { BASE_URL } from '../../../App'
 
 const Write = () => {
   const user = JSON.parse(localStorage.getItem("user"))
@@ -24,7 +23,7 @@ const Write = () => {
   const submitHandler = (event) => {
     event.preventDefault()
 
-    axios.post(`${BASE_URL}/write`, fields,
+    axios.post(`${process.env.REACT_APP_BASE_URL}/write`, fields,
       {
         headers: { "Content-Type": "application/json" }
       })
