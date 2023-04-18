@@ -39,10 +39,8 @@ const Explore = () => {
                     ? <div className="other-posts">
                         {
                             posts.map((post) => (
-                                <div className="other-post" key={post._id}>
-                                    <img className="other-postImg" src={post.photo} alt="img"
-                                        onTouchStart={() => { navigate("/others/" + post._id) }}
-                                        onClick={() => { navigate("/others/" + post._id) }} />
+                                <div className="other-post" key={post._id} onClick={() => { navigate("/others/" + post._id) }}>
+                                    <img className="other-postImg" src={post.photo} alt="img" />
                                     <div className="other-postInfo">
                                         <span className="other-postTitle">
                                             <Link to={"/others/" + post._id} className="link">
