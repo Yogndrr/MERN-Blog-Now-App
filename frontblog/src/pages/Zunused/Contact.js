@@ -4,6 +4,7 @@ import { MdOutlineEmail } from "react-icons/md"
 import { FaLinkedin } from 'react-icons/fa'
 import { FaGithub } from 'react-icons/fa'
 import emailjs from '@emailjs/browser';
+import Popup from '../../components/Popup'
 
 const Contact = ({ redirectHandler }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -61,16 +62,7 @@ const Contact = ({ redirectHandler }) => {
           </form>
         </div>
       </div>
-      {showPopup && (
-        <div className="msg-popups">
-          <div className="msg-popups-content">
-            <h2>{message}</h2>
-            <div className="msg-popup-buttons">
-              <button className="msg-popup-ok-button msg-popupButton" onClick={() => setShowPopup(false)}>Ok</button>
-            </div>
-          </div>
-        </div>
-      )}
+      {showPopup && <Popup message={message} setShowPopup={setShowPopup} />}
     </>
   )
 }

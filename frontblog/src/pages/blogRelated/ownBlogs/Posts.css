@@ -13,8 +13,7 @@
 }
 
 .post:hover {
-    transform: scale(1.06);
-    background-color: rgb(162, 155, 169);
+    background-color: var(--color-bg-variant);
 }
 
 .postImg {
@@ -44,6 +43,7 @@
     font-size: 13px;
     font-weight: 400;
     margin-top: 15px;
+    color: rgb(157, 155, 155);
 }
 
 .postDesc {
@@ -51,7 +51,6 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
-    color: #444444;
     margin-top: 15px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -72,11 +71,6 @@
         margin: 0px 15px 40px 15px;
         display: flex;
         flex-direction: column;
-    }
-
-    .post:hover {
-        transform: scale(0.01);
-        background-color: rgb(162, 155, 169);
     }
 
     .postImg {

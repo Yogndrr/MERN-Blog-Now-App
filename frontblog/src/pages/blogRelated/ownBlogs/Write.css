@@ -50,6 +50,7 @@
     border: none;
     padding: 8px;
     width: 30rem;
+    background-color: #484848;
 }
 
 .writeInput {
@@ -58,7 +59,7 @@
     padding: 20px;
     width: 100%;
     margin-bottom: 20px;
-    background-color: #e9e0e0;
+    background-color: #484848;
 }
 
 .writeInput::placeholder {

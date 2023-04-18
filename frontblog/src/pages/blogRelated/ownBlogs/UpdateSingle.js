@@ -121,7 +121,7 @@ const UpdateSingle = () => {
                                         <i className="writeIcon fas fa-image"></i>
                                     </label>
                                     <label><i className={showInputField ? "hide" : "writeIcon fas fa-plus"} onClick={addLink}></i></label>
-                                    <i style={{ color: "red" }} className="writeIcon fas fa-times-circle" onClick={() => { setPhoto("") }}></i>
+                                    <i style={{ color: "red" }} className="writeIcon fas fa-times-circle" onClick={() => { navigate(-1) }}></i>
                                     {showInputField &&
                                         <div>
                                             <input

@@ -10,10 +10,8 @@ const Posts = ({ posts }) => {
       <div className="posts">
         {
           posts.map((post) => (
-            <div className="post" key={post._id}>
-              <img className="postImg" src={post.photo} alt="img"
-                onTouchStart={() => { navigate("/post/" + post._id) }}
-                onClick={() => { navigate("/post/" + post._id) }} />
+            <div className="post" key={post._id} onClick = {() => { navigate("/post/" + post._id) }}>
+              <img className="postImg" src={post.photo} alt="img" />
               <div className="postInfo">
                 <span className="postTitle">
                   <Link to={"/post/" + post._id} className="link">

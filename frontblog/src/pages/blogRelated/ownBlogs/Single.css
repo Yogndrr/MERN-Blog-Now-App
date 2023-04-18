@@ -10,7 +10,6 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     overflow: hidden;
-    background-color: #c1bbbb;
 }
 
 .singlePostWrapper {
@@ -51,7 +50,7 @@
 }
 
 .singlePostIcon:first-child {
-    color: rgb(23, 0, 128);
+    color: rgb(68, 181, 209);
 }
 
 .singlePostIcon:last-child {
@@ -65,6 +64,7 @@
     align-items: center;
     font-size: 16px;
     font-family: "Varela Round", Arial, Helvetica, sans-serif;
+    color: rgb(157, 155, 155);
 }
 
 .singlePostAuthor {
@@ -73,67 +73,16 @@
 }
 
 .singlePostDesc {
-    color: #202020;
     font-size: 20px;
     line-height: 1.5;
     padding: 0 20px;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .singlePostDesc::first-letter {
     margin-left: 20px;
     font-size: 60px;
     font-weight: 600;
-}
-
-/* POPUP */
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background-color: rgb(228, 220, 220);
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.popup-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.popup-ok-button,
-.popup-cancel-button {
-
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #fff;
-    cursor: pointer;
-}
-
-.popup-ok-button {
-    background-color: #dc3545;
-}
-
-.popup-cancel-button {
-    background-color: #0095f6;
-}
-
-.popupButton {
-    width: 150px;
-    height: 50px;
-    margin-right: 10px;
-    margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 480px) {

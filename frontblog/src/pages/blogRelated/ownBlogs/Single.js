@@ -83,8 +83,8 @@ const Single = () => {
             </div>
             {
               showPopup && (
-                <div className="popup">
-                  <div className="popup-content">
+                <div className="popups">
+                  <div className="popups-content">
                     <h2>Are you sure you want to delete your post?</h2>
                     <div className="popup-buttons">
                       <button className="popup-ok-button popupButton" onClick={deleteHandler}>Ok</button>
