@@ -1,0 +1,108 @@
+.other-posts {
+    flex: 9;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.other-post {
+    width: 385px;
+    margin: 0px 25px 40px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.other-post:hover {
+    transform: scale(1.06);
+    background-color: rgb(162, 155, 169);
+}
+
+.other-postImg {
+    width: 385px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.other-postInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.other-postTitle {
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.other-postDate {
+    font-family: "Lora", serif;
+    font-style: italic;
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+.other-postDesc {
+    font-family: "Varela Round", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #444444;
+    margin-top: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+@media only screen and (max-width: 480px) {
+    .other-posts {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0px;
+        margin-top: 2rem;
+    }
+
+    .other-post {
+        width: 385px;
+        margin: 0px 15px 40px 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .other-post:hover {
+        transform: scale(0.01);
+        background-color: rgb(162, 155, 169);
+    }
+
+    .other-postImg {
+        width: 80%;
+        height: auto;
+        border-radius: 7px;
+        margin: 0 auto;
+    }
+
+    .other-postDesc {
+        margin: 15px 50px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .other-posts {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0px;
+    }
+
+    .other-post {
+        width: 385px;
+        margin: 0px 3px 40px 3px;
+        display: flex;
+        flex-direction: column;
+    }
+}

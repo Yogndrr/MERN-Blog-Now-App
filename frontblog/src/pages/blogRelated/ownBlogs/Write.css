@@ -1,0 +1,105 @@
+.write {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.writeImg {
+    margin-bottom: 30px;
+    width: 70vw;
+    max-width: 800px;
+    height: auto;
+    max-height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.writeForm {
+    width: 70vw;
+    max-width: 800px;
+}
+
+.writeFormGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.writeIcons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.writeIcon {
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    border: 1px solid;
+    border-radius: 50%;
+    /* color: rgb(129, 125, 125); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.linkInput {
+    font-size: 20px;
+    border: none;
+    padding: 8px;
+    width: 30rem;
+}
+
+.writeInput {
+    font-size: 30px;
+    border: none;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #e9e0e0;
+}
+
+.writeInput::placeholder {
+    color: rgb(189, 185, 185);
+    font-weight: 400;
+}
+
+.writeInput:focus {
+    outline-style: none;
+}
+
+.writeText {
+    width: 100%;
+    height: 250px;
+    font-family: inherit;
+    font-size: 20px;
+    border: none;
+    resize: none;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.writeSubmit {
+    color: white;
+    background-color: teal;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 20px;
+    margin-bottom: 20rem;
+}
+
+.hide {
+    display: none;
+}
+
+@media only screen and (max-width: 480px) {
+    .linkInput {
+        width: inherit;
+    }
+}

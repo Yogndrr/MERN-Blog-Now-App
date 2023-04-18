@@ -1,0 +1,51 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.headerTitles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-family: "Lora", serif;
+    color: #444;
+}
+
+.headerTitleSm {
+    position: absolute;
+    top: 18%;
+    font-size: 20px;
+}
+
+.headerTitleLg {
+    position: absolute;
+    top: 20%;
+    font-size: 100px;
+}
+
+.headerBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+    margin-bottom: 40px;
+}
+
+.headerBtn button {
+    padding: 10px 20px;
+    background-color: #660099;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.headerBtn button:hover {
+    background-color: rgb(99, 60, 99);
+}
