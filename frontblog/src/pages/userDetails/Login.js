@@ -3,6 +3,7 @@ import axios from "axios"
 import "./Login.css"
 import { useNavigate } from 'react-router-dom';
 import Popup from '../../components/Popup';
+import '../../components/Loaders/Load.scss';
 
 const Login = ({ setLoggedIn, loggedIn }) => {
 
@@ -12,6 +13,8 @@ const Login = ({ setLoggedIn, loggedIn }) => {
   const [password, setPassword] = useState('');
   const [showPopup, setShowPopup] = useState(false);
   const [message, setMessage] = useState("");
+
+  const [loader, setLoader] = useState(false)
 
   const fields = { email, password }
 
@@ -23,6 +26,7 @@ const Login = ({ setLoggedIn, loggedIn }) => {
 
   const loginHandler = (event) => {
     event.preventDefault()
+    setLoader(true)
 
     axios.post(`${process.env.REACT_APP_BASE_URL}/login`, fields,
       {
@@ -38,11 +42,13 @@ const Login = ({ setLoggedIn, loggedIn }) => {
         else {
           setMessage(result.data.response)
           setShowPopup(true)
+          setLoader(false)
         }
       })
       .catch((error) => {
         console.error(error)
         navigate("/error")
+        setLoader(false)
       })
   }
 
@@ -63,7 +69,14 @@ const Login = ({ setLoggedIn, loggedIn }) => {
             onChange={(event) => setPassword(event.target.value)}
             autoComplete="new-password" required />
 
-          <button className="loginButton" type='submit'>Login</button>
+          <button className="loginButton" type="submit" disabled={loader}>
+            {loader ? (
+              <div className="load"></div>
+            ) : (
+              'Login'
+            )}
+          </button>
+
         </form>
       </div>
       {showPopup && <Popup message={message} setShowPopup={setShowPopup} />}

@@ -52,7 +52,7 @@ const App = () => {
         </Route>
 
         <Route path="/error" element={<ErrorPage />} />
-        <Route path="/register" element={<Register setLoggedIn={setLoggedIn} signed={signed} />} />
+        <Route path="/register" element={<Register setLoggedIn={setLoggedIn} loggedIn={loggedIn} />} />
         <Route path="/login" element={<Login setLoggedIn={setLoggedIn} loggedIn={loggedIn} />} />
         <Route path='*' element={<Navigate to="/" />} />
       </Routes>

@@ -15,9 +15,16 @@ router.post("/register", async (req, res) => {
             profileDP: req.body.profileDP
         })
 
-        let result = await user.save()
-        result.password = undefined
-        res.send(result)
+        const existingUserByEmail = await User.findOne({ email: req.body.email })
+
+        if (existingUserByEmail) {
+            res.send({ response: 'Email already exists' })
+        }
+        else {
+            let result = await user.save()
+            result.password = undefined
+            res.send(result)
+        }
     }
     catch (err) {
         res.status(500).json(err)

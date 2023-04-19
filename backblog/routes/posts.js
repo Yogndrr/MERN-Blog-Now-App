@@ -63,7 +63,7 @@ router.delete("/posts/:id", async (req, res) => {
     try {
         const result = await Post.deleteMany({ authorID: req.params.id })
         if (result.deletedCount === 0) {
-            res.status(404).send("No posts found to delete")
+            res.send("No posts found to delete")
         } else {
             res.send(result)
         }

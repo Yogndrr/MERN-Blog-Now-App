@@ -4,8 +4,9 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import blank from "../../assets/blank.webp"
 import Popup from '../../components/Popup';
+import '../../components/Loaders/Load.scss';
 
-const Register = ({ setLoggedIn, signed }) => {
+const Register = ({ setLoggedIn, loggedIn }) => {
 
   const navigate = useNavigate()
 
@@ -16,11 +17,12 @@ const Register = ({ setLoggedIn, signed }) => {
 
   const [showPopup, setShowPopup] = useState(false);
   const [message, setMessage] = useState("");
+  const [loader, setLoader] = useState(false)
 
   const fields = { name, email, password, profileDP }
 
   useEffect(() => {
-    if (signed) {
+    if (loggedIn) {
       navigate("/")
     }
   })
@@ -28,19 +30,29 @@ const Register = ({ setLoggedIn, signed }) => {
   const submitHandler = (event) => {
     event.preventDefault()
 
+    setLoader(true)
+
     axios.post(`${process.env.REACT_APP_BASE_URL}/register`, fields,
       {
         headers: { "Content-Type": "application/json" }
       })
 
       .then((result) => {
-        localStorage.setItem("user", JSON.stringify(result.data))
-        setLoggedIn(true)
-        navigate("/")
+        if (result.data.response) {
+          setMessage(result.data.response)
+          setShowPopup(true)
+          setLoader(false)
+        }
+        else {
+          localStorage.setItem("user", JSON.stringify(result.data))
+          setLoggedIn(true)
+          navigate("/")
+        }
       })
       .catch((error) => {
         console.error(error)
         navigate("/error")
+        setLoader(false)
       })
   }
 
@@ -116,7 +128,13 @@ const Register = ({ setLoggedIn, signed }) => {
             onChange={(event) => setPassword(event.target.value)}
             autoComplete="new-password" required />
 
-          <button className="registerButton" type='submit'>Register</button>
+          <button className="registerButton" type="submit" disabled={loader}>
+            {loader ? (
+              <div className="load"></div>
+            ) : (
+              'Register'
+            )}
+          </button>
         </form>
       </div>
       {showPopup && <Popup message={message} setShowPopup={setShowPopup} />}
